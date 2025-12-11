@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Krishna Somnath Baviskar </title>
+		<link rel="icon" href="favicon.png" type="image/png">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	</head>
+	<body>
+		<!-- Matrix Background -->
+		<div class="matrix-bg" id="matrix-bg"></div>
+
+		<!-- Custom Cursor -->
+		<div class="cursor" id="cursor"></div>
+
+		<!-- Start Menu Bar -->
+		<div class="start-menu-bar" id="start-menu-bar">
+			<div class="start-button" id="start-button">
+				<span>= Start</span>
+			</div>
+			<div class="taskbar-icons">
+				<div class="taskbar-icon" id="terminal-icon">
+					<i class="fas fa-terminal"></i> Terminal
+				</div>
+				<div class="taskbar-icon" id="program-console-icon">
+					<i class="fas fa-terminal"></i> Program Console
+				</div>
+				<div class="taskbar-separator"></div>
+				<div class="taskbar-icon" id="about-taskbar-icon">
+					<i class="fas fa-user-secret"></i>
+				</div>
+				<div class="taskbar-icon" id="skills-taskbar-icon">
+					<i class="fas fa-laptop-code"></i>
+				</div>
+				<div class="taskbar-icon" id="projects-taskbar-icon">
+					<i class="fas fa-project-diagram"></i>
+				</div>
+				<div class="taskbar-icon" id="contact-taskbar-icon">
+					<i class="fas fa-envelope"></i>
+				</div>
+			</div>
+		</div>
+
+		<!-- Start Menu -->
+		<div class="start-menu" id="start-menu">
+			<div class="start-menu-item" id="terminal-menu-item">
+				<i class="fas fa-terminal"></i>
+				<span>Terminal</span>
+			</div>
+			<div class="start-menu-item" id="bitcoin-miner-menu-item">
+				<i class="fab fa-bitcoin"></i>
+				<span>Bitcoin Miner</span>
+			</div>
+			<div class="start-menu-item" id="neural-network-menu-item">
+				<i class="fas fa-brain"></i>
+				<span>Neural Network</span>
+			</div>
+			<div class="start-menu-item" id="remote-connection-menu-item">
+				<i class="fas fa-network-wired"></i>
+				<span>Remote Connection</span>
+			</div>
+			<div class="start-menu-item" id="password-cracker-menu-item">
+				<i class="fas fa-key"></i>
+				<span>Password Cracker</span>
+			</div>
+			<div class="start-menu-item" id="nuclear-plant-menu-item">
+				<i class="fas fa-radiation"></i>
+				<span>Nuclear Plant</span>
+			</div>
+			<div class="start-menu-item" id="system-operation-menu-item">
+				<i class="fas fa-cogs"></i>
+				<span>System Operation</span>
+			</div>
+			<div class="start-menu-item" id="compiler-menu-item">
+				<i class="fas fa-code"></i>
+				<span>Compiler</span>
+			</div>
+			
+			<div class="start-menu-separator"></div>
+			<div class="start-menu-item" id="about-menu-item">
+				<i class="fas fa-user-secret"></i>
+				<span>About</span>
+			</div>
+			<div class="start-menu-item" id="skills-menu-item">
+				<i class="fas fa-laptop-code"></i>
+				<span>Skills</span>
+			</div>
+			<div class="start-menu-item" id="projects-menu-item">
+				<i class="fas fa-project-diagram"></i>
+				<span>Projects</span>
+			</div>
+			<div class="start-menu-item" id="contact-menu-item">
+				<i class="fas fa-envelope"></i>
+				<span>Contact</span>
+			</div>
+		</div>
+
+		<!-- Windows -->
+		<div class="window" id="program-console-window">
+			<div class="window-header">
+				<div class="window-title">Program Console</div>
+				<div class="window-controls">
+					<span class="window-minimize">-</span>
+					<span class="window-maximize">□</span>
+					<span class="window-close">×</span>
+				</div>
+			</div>
+			<div class="window-content">
+				<div class="terminal-content">
+					<p>Microsoft Windows [Version 10.0.19045.2364]</p>
+					<p>(c) Microsoft Corporation. All rights reserved.</p>
+					<br>
+					<p>C:\Users\Krishna&gt; systeminfo</p>
+					<p>Accessing system information...</p>
+					<p>Host Name:                 DESKTOP-HACKER</p>
+					<p>OS Name:                   Microsoft Windows 11 Pro</p>
+					<p>System Manufacturer:       Cyberdyne Systems</p>
+					<p>System Model:              T-800</p>
+					<br>
+					<p>C:\Users\Krishna&gt; penetrate" == typeof $.accessReq;</p>
+					<p>Executing script...</p>
+					<p>Script execution completed with status: true</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="window" id="neural-network-window">
+			<div class="window-header">
+				<div class="window-title">Neural Network Tracing</div>
+				<div class="window-controls">
+					<span class="window-minimize">-</span>
+					<span class="window-maximize">□</span>
+					<span class="window-close">×</span>
+				</div>
+			</div>
+			<div class="window-content neural-network-content">
+				<canvas id="neural-network-canvas"></canvas>
+			</div>
+		</div>
+
+		<div class="window" id="bitcoin-miner-window">
+			<div class="window-header">
+				<div class="window-title">Bitcoin Miner</div>
+				<div class="window-controls">
+					<span class="window-minimize">-</span>
+					<span class="window-maximize">□</span>
+					<span class="window-close">×</span>
+				</div>
+			</div>
+			<div class="window-content">
+				<div class="terminal-content">
+					<p>Mining Bitcoin...</p>
+					<div class="mining-stats">
+						<p>Hash Rate: <span id="hash-rate">0</span> MH/s</p>
+						<p>Blocks Mined: <span id="blocks-mined">0</span></p>
+						<p>BTC Earned: <span id="btc-earned">0.00000000</span></p>
+						<div class="progress-bar">
+							<div class="progress-fill" id="mining-progress"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="window" id="remote-connection-window">
+			<div class="window-header">
+				<div class="window-title">Remote Connection</div>
+				<div class="window-controls">
+					<span class="window-minimize">-</span>
+					<span class="window-maximize">□</span>
+					<span class="window-close">×</span>
+				</div>
+			</div>
+			<div class="window-content">
+				<div class="terminal-content">
+					<p>Establishing remote connection...</p>
+					<p>Target IP: 192.168.1.1</p>
+					<p>Status: <span class="status-connecting">Connecting...</span></p>
+					<div class="connection-log" id="connection-log">
+						<p>Initializing connection protocol...</p>
+						<p>Scanning open ports...</p>
+						<p>Attempting SSH connection...</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="window" id="password-cracker-window">
+			<div class="window-header">
+				<div class="window-title">Password Cracker</div>
+				<div class="window-controls">
+					<span class="window-minimize">-</span>
+					<span class="window-maximize">□</span>
+					<span class="window-close">×</span>
+				</div>
+			</div>
+			<div class="window-content">
+				<div class="terminal-content">
+					<p>Password Cracking Tool v1.0</p>
+					<p>Target: admin@system.local</p>
+					<p>Method: Dictionary Attack</p>
+					<p>Status: <span class="status-running">Running...</span></p>
+					<div class="password-attempts" id="password-attempts">
+						<p>Trying: admin123... Failed</p>
+						<p>Trying: password... Failed</p>
+						<p>Trying: 123456... Failed</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="window" id="nuclear-plant-window">
+			<div class="window-header">
+				<div class="window-title">Nuclear Plant</div>
+				<div class="window-controls">
+					<span class="window-minimize">-</span>
+					<span class="window-maximize">□</span>
+					<span class="window-close">×</span>
+				</div>
+			</div>
+			<div class="window-content">
+				<div class="terminal-content">
+					<p>Nuclear Plant Control System</p>
+					<p>WARNING: Unauthorized access detected!</p>
+					<p>Reactor Status: <span class="status-warning">UNSTABLE</span></p>
+					<p>Core Temperature: <span id="core-temp">2700</span>°C</p>
+					<p>Cooling System: <span class="status-offline">OFFLINE</span></p>
+					<div class="reactor-controls">
+						<button class="control-btn" id="reactor-shutdown">EMERGENCY SHUTDOWN</button>
+						<button class="control-btn" id="cooling-restart">RESTART COOLING</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="window" id="system-operation-window">
+			<div class="window-header">
+				<div class="window-title">System Operation</div>
+				<div class="window-controls">
+					<span class="window-minimize">-</span>
+					<span class="window-maximize">□</span>
+					<span class="window-close">×</span>
+				</div>
+			</div>
+			<div class="window-content">
+				<div class="terminal-content">
+					<p>System Operation Center</p>
+					<p>OS: CyberOS v3.1.4</p>
+					<p>Kernel: 5.15.0-cybersec</p>
+					<p>Memory Usage: 78%</p>
+					<p>CPU Load: 42%</p>
+					<p>Active Processes: 127</p>
+					<div class="system-controls">
+						<button class="control-btn">KILL PROCESS</button>
+						<button class="control-btn">SYSTEM SCAN</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="window" id="compiler-window">
+			<div class="window-header">
+				<div class="window-title">Compiler</div>
+				<div class="window-controls">
+					<span class="window-minimize">-</span>
+					<span class="window-maximize">□</span>
+					<span class="window-close">×</span>
+				</div>
+			</div>
+			<div class="window-content">
+				<div class="terminal-content">
+					<p>CyberCompiler v2.0</p>
+					<p>Language: C++</p>
+					<div class="code-editor" contenteditable="true">
+						<pre>#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; "Hello, Cyber World!" &lt;&lt; std::endl;
+    return 0;
+}</pre>
+					</div>
+					<div class="compiler-controls">
+						<button class="control-btn" id="compile-btn">COMPILE</button>
+						<button class="control-btn" id="run-btn">RUN</button>
+					</div>
+					<div class="compiler-output" id="compiler-output">
+						<p>Ready to compile...</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="window" id="terminal-window" style="width: 700px; height: 500px; display: none;">
+			<div class="window-header">
+				<div class="window-title">Terminal</div>
+				<div class="window-controls">
+					<span class="window-minimize">-</span>
+					<span class="window-maximize">□</span>
+					<span class="window-close">×</span>
+				</div>
+			</div>
+			<div class="window-content">
+				<div class="terminal-content" id="main-terminal-content"></div>
+			</div>
+		</div>
+
+		
+
+		<!-- Header -->
+		<header>
+			<div class="terminal-header">
+				<div class="terminal-title">KRISHNA.BAVISKAR</div>
+				<nav>
+					<ul class="nav-menu">
+						<li><a href="#home">HOME</a></li>
+						<li><a href="#about">ABOUT</a></li>
+						<li><a href="#skills">SKILLS</a></li>
+						<li><a href="#experience">EXPERIENCE</a></li>
+						<li><a href="#education">EDUCATION</a></li>
+						<li><a href="#certifications">CERTIFICATIONS</a></li>
+						<li><a href="#projects">PROJECTS</a></li>
+						<li><a href="#contact">CONTACT</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<!-- Hero Section -->
+		<section id="home" class="hero">
+			<div class="hero-content">
+				<h1 data-text="KRISHNA SOMNATH BAVISKAR">KRISHNA SOMNATH BAVISKAR</h1>
+				<div class="terminal-prompt">
+					<span id="typed-text"></span><span class="caret">█</span>
+				</div>
+				<button class="hack-button flicker" onclick="initializeHack()">
+					ACCESS GRANTED
+				</button>
+			</div>
+			<div class="hacker-bg-code" id="hacker-bg-code"></div>
+		</section>
+
+		<!-- About Section -->
+		<section id="about" class="about">
+			<div class="container">
+				<h2 class="section-title">ABOUT_ME.txt</h2>
+				<div class="about-content">
+					<div class="profile-display">
+						<div class="profile-pic">
+							<img src="krishna.jpeg" alt="Krishna Somnath Baviskar" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+						</div>
+						<div class="status-indicators">
+							<div class="status-dot"></div>
+							<div class="status-dot"></div>
+							<div class="status-dot"></div>
+						</div>
+					</div>
+					<div class="terminal-window">
+						<div class="terminal-header-bar">
+							<span>profile_data.log</span>
+							<div class="terminal-buttons">
+								<div class="terminal-button"></div>
+								<div class="terminal-button"></div>
+								<div class="terminal-button"></div>
+							</div>
+						</div>
+						<div class="terminal-content">
+							<p>> Accessing user profile...</p>
+							<p>> Status: ONLINE</p>
+							<p>> Role: Full Stack Developer</p>
+							<p>> Location: Pune, Maharashtra, India</p>
+							<br />
+							<p>
+								Hello! I’m Krishna Baviskar, a passionate and versatile engineering student with a strong foundation in Mechanical Engineering and a keen interest in Computer Engineering . My academic journey has equipped me with a diverse set of skills, allowing me to approach problems with a unique, interdisciplinary perspective.
+							</p>
+							<br />
+							<p>
+								I’m always open to networking with professionals, innovators, and teams that are pushing the boundaries of engineering and technology. Let’s connect and collaborate on exciting, future-focused projects!
+							</p>
+							<br />
+							<p>> Skills: Passionate About Innovation and Problem-Solving</p>
+							<p>> Coffee Level: Maximum</p>
+							<p>> Firewall Status: ACTIVE</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Skills Section -->
+		<section id="skills" class="skills">
+			<div class="container">
+				<h2 class="section-title">SKILLS_MATRIX.dat</h2>
+				<div class="skills-grid">
+					<div class="skill-terminal">
+						<div class="skill-header">
+							<span>💻</span>
+							<span>TOP_SKILLS</span>
+						</div>
+						<div class="skill-content">
+							<div class="terminal-content">
+								<p>> Reinforcement Learning</p>
+								<p>> React.js</p>
+								<p>> JavaScript</p>
+							</div>
+							<div class="skill-level">
+								<span>Level:</span>
+								<div class="progress-bar">
+									<div
+										class="progress-fill"
+										style="--progress: 95%; width: 95%"
+									></div>
+								</div>
+								<span>95%</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="skill-terminal">
+						<div class="skill-header">
+							<span>🔒</span>
+							<span>CYBERSECURITY</span>
+						</div>
+						<div class="skill-content">
+							<div class="terminal-content">
+								<p>> Network Security: Advanced</p>
+								<p>> Penetration Testing: Intermediate</p>
+								<p>> Ethical Hacking: Learning</p>
+								<p>> Security Auditing: Proficient</p>
+							</div>
+							<div class="skill-level">
+								<span>Level:</span>
+								<div class="progress-bar">
+									<div
+										class="progress-fill"
+										style="--progress: 75%; width: 75%"
+									></div>
+								</div>
+								<span>75%</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="skill-terminal">
+						<div class="skill-header">
+							<span>🗄️</span>
+							<span>DATABASE_MGMT</span>
+						</div>
+						<div class="skill-content">
+							<div class="terminal-content">
+								<p>> SQL/NoSQL: Expert</p>
+								<p>> MongoDB: Advanced</p>
+								<p>> PostgreSQL: Intermediate</p>
+								<p>> Redis: Proficient</p>
+							</div>
+							<div class="skill-level">
+								<span>Level:</span>
+								<div class="progress-bar">
+									<div
+										class="progress-fill"
+										style="--progress: 85%; width: 85%"
+									></div>
+								</div>
+								<span>85%</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="skill-terminal">
+						<div class="skill-header">
+							<span>☁️</span>
+							<span>CLOUD_COMPUTING</span>
+						</div>
+						<div class="skill-content">
+							<div class="terminal-content">
+								<p>> AWS: Intermediate</p>
+								<p>> Docker: Proficient</p>
+								<p>> Kubernetes: Learning</p>
+								<p>> CI/CD: Advanced</p>
+							</div>
+							<div class="skill-level">
+								<span>Level:</span>
+								<div class="progress-bar">
+									<div
+										class="progress-fill"
+										style="--progress: 70%; width: 70%"
+									></div>
+								</div>
+								<span>70%</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="skill-terminal">
+						<div class="skill-header">
+							<span>💻</span>
+							<span>PROGRAMMING_LANGS</span>
+						</div>
+						<div class="skill-content">
+							<div class="terminal-content">
+								<p>> Python: Expert</p>
+								<p>> JavaScript: Advanced</p>
+								<p>> Java: Intermediate</p>
+								<p>> C++: Proficient</p>
+							</div>
+							<div class="skill-level">
+								<span>Level:</span>
+								<div class="progress-bar">
+									<div
+										class="progress-fill"
+										style="--progress: 90%; width: 90%"
+									></div>
+								</div>
+								<span>90%</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="skill-terminal">
+						<div class="skill-header">
+							<span>🌐</span>
+							<span>FRONTEND_DEV</span>
+						</div>
+						<div class="skill-content">
+							<div class="terminal-content">
+								<p>> React.js: Expert</p>
+								<p>> HTML/CSS: Expert</p>
+								<p>> TailwindCSS: Advanced</p>
+								<p>> UI/UX Design: Proficient</p>
+							</div>
+							<div class="skill-level">
+								<span>Level:</span>
+								<div class="progress-bar">
+									<div
+										class="progress-fill"
+										style="--progress: 92%; width: 92%"
+									></div>
+								</div>
+								<span>92%</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="skill-terminal">
+						<div class="skill-header">
+							<span>⚙️</span>
+							<span>BACKEND_DEV</span>
+						</div>
+						<div class="skill-content">
+							<div class="terminal-content">
+								<p>> Node.js: Advanced</p>
+								<p>> Express.js: Advanced</p>
+								<p>> REST APIs: Expert</p>
+								<p>> Authentication: Proficient</p>
+							</div>
+							<div class="skill-level">
+								<span>Level:</span>
+								<div class="progress-bar">
+									<div
+										class="progress-fill"
+										style="--progress: 88%; width: 88%"
+									></div>
+								</div>
+								<span>88%</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="skill-terminal">
+						<div class="skill-header">
+							<span>🧪</span>
+							<span>TESTING_DEBUGGING</span>
+						</div>
+						<div class="skill-content">
+							<div class="terminal-content">
+								<p>> Unit Testing: Proficient</p>
+								<p>> Integration Testing: Intermediate</p>
+								<p>> Debugging: Expert</p>
+							</div>
+							<div class="skill-level">
+								<span>Level:</span>
+								<div class="progress-bar">
+									<div class="progress-fill" style="--progress: 80%; width: 80%"></div>
+								</div>
+								<span>80%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Experience Section -->
+		<section id="experience" class="experience">
+			<div class="container">
+				<h2 class="section-title">EXPERIENCE.log</h2>
+				<div class="timeline">
+					<div class="timeline-item">
+						<div class="timeline-dot"></div>
+						<div class="timeline-date">Feb 2025 - Mar 2025</div>
+						<div class="timeline-content">
+							<h3>VaultofCodes</h3>
+							<h4>Web Development Intern</h4>
+							<p>During my Web Development Internship, I gained hands-on experience in:</p>
+							<ul>
+								<li>Frontend: HTML, CSS, JavaScript , React, responsive design with Tailwind</li>
+								<li>Backend: Node.js, REST API integration, authentication</li>
+								<li>Databases: MongoDB</li>
+								<li>Version Control: Git & GitHub for collaboration</li>
+							</ul>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<div class="timeline-dot"></div>
+						<div class="timeline-date">Jan 2025 - Mar 2025</div>
+						<div class="timeline-content">
+							<h3>All India Council for Technical Education (AICTE)</h3>
+							<h4>AI ML Intern</h4>
+							<p>The AI/ML Virtual Internship provided an industry-aligned learning experience focused on core concepts of Artificial Intelligence and Machine Learning. The program covered theoretical foundations and hands-on projects including supervised and unsupervised learning, data preprocessing, model building, and evaluation. Throughout the internship, I gained exposure to real-world AI/ML problem- solving, Python programming, and popular libraries like NumPy, Pandas, Matplotlib, Scikit-learn, and TensorFlow.</p>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<div class="timeline-dot"></div>
+						<div class="timeline-date">Oct 2024 - Dec 2024</div>
+						<div class="timeline-content">
+							<h3>Android Developer Intern</h3>
+							<h4>Maharashtra, India</h4>
+							<p>During this internship, I had the opportunity to enhance my skills in Android app development, working on:</p>
+							<ul>
+								<li>~Building robust applications using Java/Kotlin and Android Studio.</li>
+								<li>~Implementing modern Android architecture patterns such as MVVM and Jetpack components.</li>
+								<li>~Collaborating on projects that involved REST APIs, Firebase integration, and responsive UI design.</li>
+								<li>~Debugging, testing, and optimizing apps for performance and scalability.</li>
+							</ul>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<div class="timeline-dot"></div>
+						<div class="timeline-date">Jan 2024 - Jun 2024</div>
+						<div class="timeline-content">
+							<h3>Fortuna Engineering Nashik Private Limited</h3>
+							<h4>Intern</h4>
+							<p>During my internship at Fortuna Engineering Pvt. Ltd., I gained valuable hands-on experience in manufacturing and design processes, specifically focusing on connecting rods. Key highlights of my experience include:</p>
+							<ul>
+								<li>~Learning the design principles and specifications for manufacturing high- quality connecting rods.</li>
+								<li>~Gaining in-depth exposure to various industrial machines such as CNC machines, lathes, milling machines, and more.</li>
+								<li>~Understanding the manufacturing workflow, including raw material selection, machining processes, quality control, and finishing techniques.</li>
+								<li>~Collaborating with a skilled team to ensure precision, efficiency, and adherence to industry standards.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Education Section -->
+		<section id="education" class="education">
+			<div class="container">
+				<h2 class="section-title">EDUCATION.log</h2>
+				<div class="timeline">
+					<div class="timeline-item">
+						<div class="timeline-dot"></div>
+						<div class="timeline-date">Started Aug 2024</div>
+						<div class="timeline-content">
+							<h3>D. Y. Patil College of Engineering (DYPCOE), Akurdi, Pune</h3>
+							<h4>Bachelor of Technology - BTech, Computer Engineering</h4>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<div class="timeline-dot"></div>
+						<div class="timeline-date">2021 - 2024</div>
+						<div class="timeline-content">
+							<h3>Government Polytechnic College</h3>
+							<h4>Diploma of Education, Mechanical Engineering</h4>
+							<p>Nashik, India</p>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<div class="timeline-dot"></div>
+						<div class="timeline-date">2011 - 2021</div>
+						<div class="timeline-content">
+							<h3>Kendriya Vidyalaya (KV)</h3>
+							<h4>10th Grade</h4>
+							<p>Ahmedabad, India</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Certifications Section -->
+		<section id="certifications" class="certifications">
+			<div class="container">
+				<h2 class="section-title">CERTIFICATIONS.log</h2>
+				<div class="certifications-grid">
+					<div class="certification-card">
+						<div class="certification-icon"><i class="fas fa-shield-alt"></i></div>
+						<div class="certification-info">
+							<h3>Oracle Certified Foundation Associate</h3>
+							<p>Issuer: Oracle</p>
+						</div>
+					</div>
+					<div class="certification-card">
+						<div class="certification-icon"><i class="fas fa-microchip"></i></div>
+						<div class="certification-info">
+							<h3>Prompt Engineering & Software Development</h3>
+							<p>Issuer: Microsoft & LinkedIn</p>
+						</div>
+					</div>
+					<div class="certification-card">
+						<div class="certification-icon"><i class="fas fa-brain"></i></div>
+						<div class="certification-info">
+							<h3>Fundamentals of Deep Learning</h3>
+							<p>Issuer: NVIDIA</p>
+						</div>
+					</div>
+					<div class="certification-card">
+						<div class="certification-icon"><i class="fas fa-chart-line"></i></div>
+						<div class="certification-info">
+							<h3>Data Analysis</h3>
+							<p>Issuer: Microsoft & LinkedIn</p>
+						</div>
+					</div>
+					<div class="certification-card">
+						<div class="certification-icon">
+							<i class="fas fa-shield-alt"></i>
+						</div>
+						<div class="certification-info">
+							<h3>Cybersecurity</h3>
+							<p>Issuer: Microsoft & LinkedIn</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- Projects Section -->
+		<section id="projects" class="projects">
+			<div class="container">
+				<h2 class="section-title">PROJECTS.log</h2>
+				<div class="projects-grid">
+					<!-- Project Card Example -->
+					<div class="project-card">
+						<div class="project-screen">
+							<span>🔐</span>
+						</div>
+						<div class="project-info">
+							<div class="project-title">Secure Login System</div>
+							<div class="project-description">
+								A robust authentication system with multi-factor support and
+								advanced encryption.
+							</div>
+							<div class="tech-stack">
+								<span class="tech-tag">Node.js</span>
+								<span class="tech-tag">Express</span>
+								<span class="tech-tag">MongoDB</span>
+								<span class="tech-tag">JWT</span>
+							</div>
+							<div class="project-links">
+								<a
+									class="project-link"
+									href="https://github.com/krishna-baviskar"
+									target="_blank"
+									>GitHub</a
+								>
+								<a
+									class="project-link"
+									href="https://secure-login-demo.com"
+									target="_blank"
+									>Live Demo</a
+								>
+							</div>
+						</div>
+					</div>
+					<div class="project-card">
+						<div class="project-screen">
+							<span>🤖</span>
+						</div>
+						<div class="project-info">
+							<div class="project-title">AI Chatbot Interface</div>
+							<div class="project-description">
+								A sleek, responsive frontend for an AI-powered chatbot, built with React and styled for a futuristic feel.
+							</div>
+							<div class="tech-stack">
+								<span class="tech-tag">React</span>
+								<span class="tech-tag">API</span>
+								<span class="tech-tag">TailwindCSS</span>
+								<span class="tech-tag">Node.js</span>
+							</div>
+							<div class="project-links">
+								<a
+									class="project-link"
+									href="https://github.com/krishna-baviskar"
+									target="_blank"
+									>GitHub</a
+								>
+								<a
+									class="project-link"
+									href="https://ai-chatbot-demo.com"
+									target="_blank"
+									>Live Demo</a
+								>
+							</div>
+						</div>
+					</div>
+					<div class="project-card">
+						<div class="project-screen">
+							<span>📱</span>
+						</div>
+						<div class="project-info">
+							<div class="project-title">Android Task Manager</div>
+							<div class="project-description">
+								A native Android app for task management, featuring a clean UI, local data persistence, and notifications.
+							</div>
+							<div class="tech-stack">
+								<span class="tech-tag">Kotlin</span>
+								<span class="tech-tag">Android Studio</span>
+								<span class="tech-tag">MVVM</span>
+								<span class="tech-tag">RoomDB</span>
+							</div>
+							<div class="project-links">
+								<a
+									class="project-link"
+									href="https://github.com/krishna-baviskar"
+									target="_blank"
+									>GitHub</a
+								>
+								<a class="project-link" href="#" target="_blank">Live Demo</a>
+							</div>
+						</div>
+					</div>
+					<div class="project-card">
+						<div class="project-screen">
+							<span>📡</span>
+						</div>
+						<div class="project-info">
+							<div class="project-title">Network Traffic Analyzer</div>
+							<div class="project-description">
+								A tool to capture and analyze network packets, with visualizations for traffic patterns and potential threats.
+							</div>
+							<div class="tech-stack">
+								<span class="tech-tag">Python</span>
+								<span class="tech-tag">Scapy</span>
+								<span class="tech-tag">Tkinter</span>
+								<span class="tech-tag">Wireshark</span>
+							</div>
+							<div class="project-links">
+								<a
+									class="project-link"
+									href="https://github.com/krishna-baviskar"
+									target="_blank"
+									>GitHub</a
+								>
+								<a class="project-link" href="#" target="_blank">Live Demo</a>
+							</div>
+						</div>
+					</div>
+					<div class="project-card">
+						<div class="project-screen">
+							<span>🔍</span>
+						</div>
+						<div class="project-info">
+							<div class="project-title">Vulnerability Scanner</div>
+							<div class="project-description">
+								A web application scanner that identifies common vulnerabilities like XSS, SQL Injection, and misconfigurations.
+							</div>
+							<div class="tech-stack">
+								<span class="tech-tag">Python</span>
+								<span class="tech-tag">Flask</span>
+								<span class="tech-tag">Requests</span>
+								<span class="tech-tag">BeautifulSoup</span>
+							</div>
+							<div class="project-links">
+								<a
+									class="project-link"
+									href="https://github.com/krishna-baviskar"
+									target="_blank"
+									>GitHub</a
+								>
+								<a class="project-link" href="#" target="_blank">Live Demo</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Section -->
+		<section id="contact" class="contact">
+			<div class="container">
+				<h2 class="section-title">CONTACT_ME.sh</h2>
+				<div class="contact-content">
+					<form class="contact-form" id="contactForm">
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input
+								type="text"
+								id="name"
+								name="name"
+								required
+								autocomplete="off"
+							/>
+						</div>
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input
+								type="email"
+								id="email"
+								name="email"
+								required
+								autocomplete="off"
+							/>
+						</div>
+						<div class="form-group">
+							<label for="message">Message</label>
+							<textarea
+								id="message"
+								name="message"
+								rows="5"
+								required
+							></textarea>
+						</div>
+						<button type="submit" class="submit-btn">SEND</button>
+						<div id="formStatus" style="margin-top: 1rem"></div>
+					</form>
+					<div>
+						<div class="terminal-content">
+							<p>
+								> Email:
+								<a
+									href="mailto:krishnabaviskar40@gmail.com"
+									style="color: #00ff00"
+									>krishnabaviskar40@gmail.com</a
+								>
+							</p>
+							<p>
+								> LinkedIn:
+								<a
+									href="https://www.linkedin.com/in/krishna-baviskar"
+									target="_blank"
+									style="color: #00ff00"
+									>www.linkedin.com/in/krishna-baviskar</a
+								>
+							</p>
+							<p>
+								> GitHub:
+								<a
+									href="https://github.com/krishna-baviskar"
+									target="_blank"
+									style="color: #00ff00"
+									>https://github.com/krishna-baviskar</a
+								>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer>
+			<p>&copy; 2023 Krishna Somnath Baviskar. All Rights Reserved.</p>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="script.js"></script>
+	</body>
+</html>
