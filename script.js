@@ -1,4 +1,4 @@
-// Custom here
+// Custom here yes
 const cursor = document.getElementById("cursor");
 document.addEventListener("mousemove", (e) => {
 	const x = e.clientX;
