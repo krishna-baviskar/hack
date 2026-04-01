@@ -7,7 +7,7 @@ document.addEventListener("mousemove", (e) => {
 	cursor.style.top = `${y}px`;
 });
 
-// Matrix Rain Effect
+// Matrix  Rain Effect
 const matrixBg = document.getElementById("matrix-bg");
 const columns = Math.floor(window.innerWidth / 20);
 for (let i = 0; i < columns; i++) {
